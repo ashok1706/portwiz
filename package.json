@@ -1,0 +1,43 @@
+{
+  "name": "portwiz",
+  "version": "1.0.0",
+  "description": "Fix port conflicts instantly and run your dev server without interruptions",
+  "type": "module",
+  "bin": {
+    "portwiz": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/cli.js",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "port",
+    "kill",
+    "process",
+    "cli",
+    "developer-tools",
+    "devtools",
+    "port-conflict"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "picocolors": "^1.1.0",
+    "@inquirer/confirm": "^5.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "@types/node": "^20.14.0",
+    "vitest": "^2.0.0"
+  }
+}
