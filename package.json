@@ -7,18 +7,23 @@
     "portwiz": "./dist/cli.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "engines": {
-    "node": ">=18"
+    "node": ">=18.0.0"
   },
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
     "start": "node dist/cli.js",
-    "test": "vitest",
-    "test:run": "vitest run",
-    "prepublishOnly": "npm run build"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src/",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepublishOnly": "npm run build && npm test"
   },
   "keywords": [
     "port",
@@ -27,17 +32,31 @@
     "cli",
     "developer-tools",
     "devtools",
-    "port-conflict"
+    "port-conflict",
+    "free-port",
+    "lsof",
+    "netstat"
   ],
+  "author": "ashok1706",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashok1706/portwiz.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ashok1706/portwiz/issues"
+  },
+  "homepage": "https://github.com/ashok1706/portwiz#readme",
   "license": "MIT",
   "dependencies": {
+    "@inquirer/confirm": "^5.0.0",
     "commander": "^12.1.0",
-    "picocolors": "^1.1.0",
-    "@inquirer/confirm": "^5.0.0"
+    "picocolors": "^1.1.0"
   },
   "devDependencies": {
-    "typescript": "^5.5.0",
     "@types/node": "^20.14.0",
+    "eslint": "10.0.3",
+    "prettier": "3.8.1",
+    "typescript": "^5.5.0",
     "vitest": "^2.0.0"
   }
 }
